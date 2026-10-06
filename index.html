@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Harmonis Investor Overview</title><meta name="deck-version" content="f0fc115e0431c2f9"><meta name="description" content="Harmonis pre-seed overview: available portal, planned payments and modeled company revenue scenarios.">
+<title>Harmonis Investor Overview</title><meta name="deck-version" content="02d7bc15b060f387"><meta name="description" content="Harmonis pre-seed overview: available portal, planned payments and modeled company revenue scenarios.">
 <meta name="robots" content="noindex"><link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 36 36' aria-hidden='true'><rect width='36' height='36' rx='11' fill='%23b8efcf'/><path d='M9 12v12m18-12v12M9 18c6-10 12 10 18 0' stroke='%23102e35' stroke-width='2.5' fill='none' stroke-linecap='round'/></svg>">
 <style>
 :root{--ink:#142e35;--muted:#526971;--paper:#f3f5f1;--white:#fff;--line:#d7e0db;--green:#096b57;--mint:#d5f6df;--logo:#b8efcf;--night:#102e35;--soft:#e7eef0}
@@ -69,6 +69,7 @@ if(scroll)document.querySelector('nav.chips').scrollIntoView({behavior:'smooth'}
 ch.forEach(c=>c.onclick=()=>go(+c.dataset.i,true));pv.onclick=()=>go(i-1,true);nx.onclick=()=>go(i+1,true);
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(i+1);if(e.key==='ArrowLeft')go(i-1)});
 const h=/^#s(\d+)$/.exec(location.hash);go(h?+h[1]-1:0);
+window.addEventListener('hashchange',()=>{const h=/^#s(\d+)$/.exec(location.hash);if(h)go(+h[1]-1,true);});
 let checking=false;
 async function checkUpdate(){
  if(checking||document.hidden||!/^https?:$/.test(location.protocol))return;
